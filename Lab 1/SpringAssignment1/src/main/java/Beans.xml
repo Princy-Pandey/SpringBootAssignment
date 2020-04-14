@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans 
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context 
+  http://www.springframework.org/schema/context/spring-context.xsd">
+
+ <bean id = "sbu" class = "com.cg.lab2.SBU">
+   <property name="sbuId" value="5"></property>
+   <property name="sbuHead" value="Sri"></property>
+   <property name="sbuName" value="Product Engineering Services"></property>
+   </bean>
+    <bean id = "employee" class = "com.cg.lab2.Employee">
+   <property name="employeeId" value="1"></property>
+   <property name="employeeName" value="Harsha"></property>
+   <property name="salary" value="20000"></property>
+   <property name="sbuDetails" ref="sbu"></property>
+   <property name="age" value="20"></property>
+   </bean>
+   <bean id = "employee1" class = "com.cg.lab1.Employee">
+   <property name="employeeId" value="1"></property>
+   <property name="employeeName" value="Harsha"></property>
+   <property name="salary" value="20000"></property>
+   <property name="businessUnit" value="PES-BU"></property>
+   <property name="age" value="20"></property>
+   </bean>
+   <bean id = "employee2" class = "com.cg.lab3.Employee">
+   <property name="employeeId" value="1"></property>
+   <property name="employeeName" value="Harsha"></property>
+   <property name="salary" value="2000000"></property>
+   </bean>
+    <bean id = "employee3" class = "com.cg.lab3.Employee">
+   <property name="employeeId" value="12345"></property>
+   <property name="employeeName" value="Harriet"></property>
+   <property name="salary" value="500000"></property>
+   </bean>
+   <bean id = "sbu1" class = "com.cg.lab3.SBU">
+   <property name="sbuId" value="5"></property>
+   <property name="sbuHead" value="Sri"></property>
+   <property name="sbuName" value="Product Engineering Services"></property>
+   <property name="emplist">
+         <list>
+	       <ref bean="employee2"/>
+	       <ref bean="employee3"/>
+	   </list>
+      </property> 
+   </bean>
+   <bean id = "employee5" class = "com.cg.lab4.Employee">
+   <property name="employeeId" value="12"></property>
+   <property name="employeeName" value="Harriet"></property>
+   <property name="salary" value="500000"></property>
+   </bean>
+   </beans>
